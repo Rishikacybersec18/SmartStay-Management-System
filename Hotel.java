@@ -88,6 +88,7 @@ public class Hotel {
         room.setAvailable(false);
         bookings.add(booking);
         FileHandler.saveBooking(booking);
+
         System.out.println("\n[Success] Room booked successfully!");
         booking.displayBookingDetails();
         return booking;
