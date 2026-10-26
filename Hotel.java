@@ -87,6 +87,7 @@ public class Hotel {
         Booking booking = new Booking(nextBookingId++, guest, room, nights);
         room.setAvailable(false);
         bookings.add(booking);
+        FileHandler.saveBooking(booking);
 
         System.out.println("\n[Success] Room booked successfully!");
         booking.displayBookingDetails();
@@ -142,6 +143,7 @@ public class Hotel {
 
         // Process checkout
         booking.checkOut();
+        FileHandler.saveAllBookings(bookings);
         System.out.println("\n[Success] Guest checked out successfully!");
         System.out.println("Room #" + booking.getRoom().getRoomNumber() + " is now available for new bookings.");
         System.out.printf("Total Settled Bill: $%.2f%n", booking.getTotalAmount());

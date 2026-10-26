@@ -13,6 +13,10 @@ public class Main {
         System.out.println("      Welcome to SmartStay Hotel Management       ");
         System.out.println("==================================================");
 
+      // Inside main() method on startup:
+      List<Booking> loadedBookings = FileHandler.loadBookings();
+      // Add or set loadedBookings into your hotel instance
+      
         while (running) {
             System.out.println("\n----------------- MAIN MENU -----------------");
             System.out.println("1. View All Rooms");
