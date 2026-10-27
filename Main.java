@@ -2,6 +2,7 @@
 // Main.java - Console-based user interface driver
 
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +14,13 @@ public class Main {
         System.out.println("      Welcome to SmartStay Hotel Management       ");
         System.out.println("==================================================");
 
-      // Inside main() method on startup:
-      List<Booking> loadedBookings = FileHandler.loadBookings();
-      // Add or set loadedBookings into your hotel instance
+        // Load persisted bookings on startup and sync hotel state
+        List<Booking> loadedBookings = FileHandler.loadBookings();
+        if (loadedBookings != null) {
+            for (Booking booking : loadedBookings) {
+                hotel.addReconstructedBooking(booking);
+            }
+        }
       
         while (running) {
             System.out.println("\n----------------- MAIN MENU -----------------");

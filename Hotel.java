@@ -167,11 +167,16 @@ public class Hotel {
     // Add a reconstructed booking loaded from file and sync room availability
     public void addReconstructedBooking(Booking booking) {
         if (booking != null) {
-            bookings.add(booking);
-            // If booking is still active, room must stay occupied
-            if (booking.isActive()) {
+            Room hotelRoom = findRoomByNumber(booking.getRoom().getRoomNumber());
+            if (hotelRoom != null) {
+                booking.setRoom(hotelRoom);
+                if (booking.isActive()) {
+                    hotelRoom.setAvailable(false);
+                }
+            } else if (booking.isActive()) {
                 booking.getRoom().setAvailable(false);
             }
+            bookings.add(booking);
             // Ensure nextBookingId is greater than loaded booking ID
             if (booking.getBookingId() >= nextBookingId) {
                 nextBookingId = booking.getBookingId() + 1;

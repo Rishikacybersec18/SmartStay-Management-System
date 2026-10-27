@@ -13,6 +13,11 @@ public class Guest {
         this.contactNumber = contactNumber;
     }
 
+    // Overloaded constructor for rehydrating guest without contact number
+    public Guest(String guestId, String name) {
+        this(guestId, name, "N/A");
+    }
+
   
     public String getGuestId() {
         return guestId;

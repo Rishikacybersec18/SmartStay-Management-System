@@ -4,14 +4,16 @@ public class StandardRoom extends Room {
         super(roomNumber, pricePerNight);
     }
 
+    public StandardRoom(int roomNumber) {
+        super(roomNumber, 50.0);
+    }
+
     // Overriding abstract method from Room
     @Override
     public String getRoomType() {
         return "Standard";
     }
 
-    // Overriding calculateBill from Billable interface
-    // Standard rooms have standard pricing: pricePerNight * nights
     @Override
     public double calculateBill(int nights) {
         return getPricePerNight() * nights;

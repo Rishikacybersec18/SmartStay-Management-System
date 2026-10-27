@@ -1,0 +1,3 @@
+1001,G9090,rishika,202,DeluxeRoom,4,552.00,ACTIVE
+1002,K090,sukesh,101,StandardRoom,2,100.00,CHECKED_OUT
+1003,L00,jiya,101,StandardRoom,1,50.00,ACTIVE,4567890
