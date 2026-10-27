@@ -17,7 +17,6 @@ public class Booking {
         this.status = "ACTIVE";
     }
 
-    // Overloaded Constructor for reconstructing bookings from file storage (Used by Team Member 2)
     public Booking(int bookingId, Guest guest, Room room, int nights, double totalAmount, String status) {
         this.bookingId = bookingId;
         this.guest = guest;
