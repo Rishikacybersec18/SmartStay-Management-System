@@ -151,7 +151,7 @@ public class Hotel {
     }
 
     // ========================================================
-    // Integration Methods for Team Member 2 (FileHandler)
+    //  (FileHandler)
     // ========================================================
 
     // Get list of all rooms
